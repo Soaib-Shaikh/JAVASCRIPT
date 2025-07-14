@@ -1,0 +1,127 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Apply overall background and font styling */
+body {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container padding */
+.container {
+  padding-top: 30px;
+}
+
+/* Login card style */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+/* Input styling */
+input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 10px 12px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Submit Button */
+button.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Table Styles */
+table {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+caption {
+  caption-side: top;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+thead {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+th, td {
+  vertical-align: middle !important;
+}
+
+/* Action Buttons */
+.table button {
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 14px;
+  margin: 2px;
+  transition: all 0.2s;
+}
+
+.table .btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.table .btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.table .btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.table .btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive tweak */
+@media (max-width: 576px) {
+  form, table {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  caption {
+    font-size: 18px;
+  }
+}

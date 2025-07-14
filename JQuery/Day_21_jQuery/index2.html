@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slide Toggle Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #myForm {
+      display: none;
+      background-color: #f1f1f1;
+      padding: 15px;
+      width: 300px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="toggleForm">Show/Hide Form</button>
+
+<div id="myForm">
+  <label>Name: <input type="text"></label><br><br>
+  <label>Email: <input type="email"></label><br><br>
+  <button>Submit</button>
+</div>
+
+<script>
+  $("#toggleForm").click(function () {
+    $("#myForm").slideToggle(500);
+  });
+</script>
+
+</body>
+</html>

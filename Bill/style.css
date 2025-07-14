@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.table tbody tr {
+  height: 50px;
+}
+
+.table-bordered td, .table-bordered th {
+  vertical-align: middle;
+}
+
+.borderless td {
+  border: none !important;
+}
+
+ body {
+  padding: 30px;
+  background: #f9f9f9;
+}
+
+.form-header {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

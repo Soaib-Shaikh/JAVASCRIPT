@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="marksheet-container">
+        <h1 class="marksheet-title">Grade Calculator</h1>
+        <form class="marksheet-form" action="" onsubmit="return false">
+            <div class="name">
+                <h3 class="names">Student GRID: </h3>
+                <input type="number" name="GRID"  id="grid" class="marksheet-input">
+            </div>
+            
+            <div class="name">
+                <h3 class="names">Student Name: </h3>
+                <input type="text" name="name"  id="name" class="marksheet-input">
+            </div>
+
+            <div class="name">
+                <h3 class="names">HTML & CSS Marks: </h3>
+                <input type="number" name="HTML_CSS"  id="marks1" class="marksheet-input">
+            </div>
+            <div class="name">
+                <h3 class="names">C & C++ Marks: </h3>
+                <input type="number" name="C_CPP"  id="marks2" class="marksheet-input">
+            </div>
+            <div class="name">
+                <h3 class="names">Javascript Marks: </h3>
+                <input type="number" name="Javascript" id="marks3" class="marksheet-input">
+            </div>
+            <button id="marks-calc" class="marksheet-btn">Calculate Grade</button>
+            <div class="marksheet-input">
+                <p id="marks-disp" class="marksheet-result"></p>
+            </div>
+
+            <button id="marks-clear" class="marksheet-btn">Clear</button>
+        </form>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

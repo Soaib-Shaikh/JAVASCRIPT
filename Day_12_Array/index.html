@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Methods Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .code-box, .output-box {
+      flex: 1 1 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .code-box pre {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    .output-box h2 {
+      margin-top: 0;
+    }
+
+    .output-line {
+      font-family: monospace;
+      margin: 4px 0;
+      padding: 4px;
+      background: #eef;
+      border-left: 4px solid #3399ff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    JavaScript Array Methods Demo
+  </header>
+
+  <div class="container">
+    <div class="code-box">
+      <h2>Code</h2>
+      <pre><code id="codeBlock"></code></pre>
+    </div>
+
+    <div class="output-box">
+      <h2>Output</h2>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script>
+    const output = document.getElementById('output');
+    const log = (label, value) => {
+      const div = document.createElement('div');
+      div.className = 'output-line';
+      div.textContent = `${label}: ${JSON.stringify(value)}`;
+      output.appendChild(div);
+    };
+
+    // 1. push
+    let fruits = ['apple', 'banana'];
+    fruits.push('orange');
+    log('Push', fruits);
+
+    // 2. pop
+    fruits.pop();
+    log('Pop', fruits);
+    
+    // 3. unshift
+    fruits.unshift('kiwi');
+    log('Unshift', fruits);
+    
+    // 4. shift
+    fruits.shift();
+    log('Shift', fruits);
+    
+    // 5. slice
+    let fruit = ['apple', 'banana', 'orange', 'watermelon'];
+    let primary = fruit.slice(0, 4);
+    log('Slice', primary);
+    
+    // 6. map
+    let num = [1, 2, 3, 4, 5];
+    let squared = num.map(n => n * n);
+    log('Map (original)', num);
+    log('Map (squared)', squared);
+    
+    // 7. filter
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8];
+    let even = nums.filter(n => n % 2 === 0);
+    log('Filter (even)', even);
+    
+    // 8. includes
+    let colors = ['red', 'blue', 'green', 'black'];
+    log('Includes (green)', colors.includes('green'));
+    
+    // 9. forEach
+    let name = ['Soaib', 'Sam', 'Shaikh'];
+    name.forEach(n => log('ForEach', n));
+    
+    // 10. find
+    let user = [{id: 2}, {id: 10}, {id: 102}];
+    let userid = user.find(u => u.id === 10);
+    log('Find (id = 10)', userid);
+    
+    // 11. splice
+    let color = ['red', 'blue','green', 'white'];
+    color.splice(0, 0, 'black');
+    log('Splice', color);
+    
+    // 12. concat
+    let arr1 = [1, 2, 3];
+    let arr2 = [4, 5, 6];
+    let merge = arr1.concat(arr2);
+    log('Concat', merge);
+    
+    // 13. indexOf
+    let player = ['virat', 'shreyash', 'gill'];
+    let index = player.indexOf('shreyash');
+    log('IndexOf', index);
+    
+    // 14. join
+    let words = ['Hello', 'World.....', 'From Soaib'];
+    let sentence = words.join(' ');
+    log('Join', sentence);
+
+    // Code block display
+    const codeBlock = document.getElementById('codeBlock');
+    codeBlock.textContent = document.currentScript.textContent;
+  </script>
+
+</body>
+</html>

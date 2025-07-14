@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Record System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  body {
+    background-color: #fefefe;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px;
+  }
+
+  .form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 0;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0 0 1px #ddd;
+  }
+
+  .table-container {
+    margin-top: 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  h2, h4 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: #003366;
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .form-control {
+    border-radius: 0;
+    border: 1px solid #999999;
+    background-color: #fcfcfc;
+  }
+
+  .form-control:focus {
+    border-color: #003366;
+    box-shadow: none;
+  }
+
+  .btn-primary {
+    background-color: #003366;
+    border-color: #003366;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+  }
+
+  .btn-primary:hover {
+    background-color: #002244;
+    border-color: #002244;
+  }
+
+  thead th {
+    background-color: #e6f0ff;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+  }
+
+  table td, table th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .btn-danger {
+    background-color: #990000;
+    border-color: #990000;
+    font-weight: bold;
+    border-radius: 0;
+  }
+
+  .btn-danger:hover {
+    background-color: #660000;
+    border-color: #660000;
+  }
+
+  .btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+</style>
+
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-container">
+      <h2 class="text-center text-primary">📘 Student Register Entry</h2>
+      <form id="studentForm" onsubmit="addStudent(); return false;">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="rollno" class="form-label">Roll No</label>
+            <input type="number" id="rollno" class="form-control" placeholder="e.g. 101">
+          </div>
+          <div class="col-md-4">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Student Name">
+          </div>
+          <div class="col-md-4">
+            <label for="course" class="form-label">Course</label>
+            <input type="text" id="course" class="form-control" placeholder="e.g. BCA">
+          </div>
+          <div class="col-md-4">
+            <label for="html" class="form-label">HTML Marks</label>
+            <input type="number" id="html" class="form-control" placeholder="Out of 100">
+          </div>
+          <div class="col-md-4">
+            <label for="css" class="form-label">CSS Marks</label>
+            <input type="number" id="css" class="form-control" placeholder="Out of 100">
+          </div>
+          <div class="col-md-4">
+            <label for="javascript" class="form-label">JavaScript Marks</label>
+            <input type="number" id="javascript" class="form-control" placeholder="Out of 100">
+          </div>
+          <div class="col-md-6">
+            <label for="attendence" class="form-label">Attendance (%)</label>
+            <input type="number" id="attendence" class="form-control" placeholder="e.g. 92">
+          </div>
+          <div class="col-md-6 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-50">Add Student</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-container mt-5">
+      <h4 class="text-center text-secondary mt-4">📒 Student Records Register</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="text-center">
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>HTML</th>
+              <th>CSS</th>
+              <th>JavaScript</th>
+              <th>Attendance (%)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            <!-- Records appear here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class Student {
+      constructor(rollno, name, course, html, css, javascript, attendence) {
+        this.rollno = rollno;
+        this.name = name;
+        this.course = course;
+        this.html = html;
+        this.css = css;
+        this.javascript = javascript;
+        this.attendence = attendence;
+      }
+    }
+
+    class Person extends Student {
+      constructor(rollno, name, course, html, css, javascript, attendence) {
+        super(rollno, name, course, html, css, javascript, attendence);
+      }
+
+      studentInfo() {
+        console.table(this);
+      }
+    }
+
+    let students = [];
+
+    function addStudent() {
+      let rollno = document.getElementById("rollno").value.trim();
+      let name = document.getElementById("name").value.trim();
+      let course = document.getElementById("course").value.trim();
+      let html = document.getElementById("html").value;
+      let css = document.getElementById("css").value;
+      let javascript = document.getElementById("javascript").value;
+      let attendence = document.getElementById("attendence").value;
+
+      if (!rollno || !name || !course || !html || !css || !javascript || !attendence) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      let student = new Person(rollno, name, course, html, css, javascript, attendence);
+      students.push(student);
+      displayStudents();
+      clearForm();
+    }
+
+    function displayStudents() {
+      let tableBody = document.getElementById("studentTableBody");
+      tableBody.innerHTML = "";
+
+      students.forEach((student, index) => {
+        let row = `<tr>
+          <td>${student.rollno}</td>
+          <td>${student.name}</td>
+          <td>${student.course}</td>
+          <td>${student.html}</td>
+          <td>${student.css}</td>
+          <td>${student.javascript}</td>
+          <td>${student.attendence}%</td>
+          <td><button class="btn btn-danger btn-sm" onclick="deleteStudent(${index})">Delete</button></td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+
+    function deleteStudent(index) {
+      if (confirm("Are you sure you want to delete this student?")) {
+        students.splice(index, 1);
+        displayStudents();
+      }
+    }
+
+    function clearForm() {
+      document.getElementById("studentForm").reset();
+    }
+  </script>
+
+</body>
+</html>

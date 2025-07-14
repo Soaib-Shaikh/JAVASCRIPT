@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Billing Form</title>
+    <!-- Boorstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h3 class="form-head">Product Entry Form</h3>
+        <form action="">
+            <div class="mb-3">
+                <label for="billno" class="form-label">Bill No</label>
+                <input type="text" class="form-control" id="billno" placeholder="Enter Bill No">
+            </div>
+            <div class="mb-3">
+                <label for="billdate" class="form-label">Bill Date</label>
+                <input type="date" class="form-control" id="billdate">
+            </div>
+            <div class="mb-3">
+                <label for="customer" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="customer" placeholder="Enter Customer Name">
+            </div>
+            <div class="mb-3">
+                <label for="srno" class="form-label">Sr. No</label>
+                <input type="number" class="form-control" id="srno" placeholder="Enter Sr. No">
+            </div>
+            <div class="mb-3">
+                <label for="product" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="product" placeholder="Enter Product Name">
+            </div>
+            <div class="mb-3">
+                <label for="qty" class="form-label">Quantity</label>
+                <input type="text" class="form-control" id="qty" placeholder="Enter Quantity">
+            </div>
+            <div class="mb-3">
+                <label for="rate" class="form-label">Rate</label>
+                <input type="text" class="form-control" id="rate" placeholder="Enter Rate">
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#billModal"
+                onclick="generateBill()">
+                Generate Bill
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="billModal" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="billModalLabel">Bill Summary</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Bill content will be filled by JS -->
+                    <div class="container border p-4 my-3 shadow">
+                        <div class="row mb-3">
+                            <div class="col-md-8">
+                                <h4><strong>SAM SPORTS</strong></h4>
+                                <p class="mb-0">Address Line 1: KOTHA, AMALSAD PIN: 396310</p>
+                                <p class="mb-0">Address Line 2: NAVSARI, GUJARAT</p>
+                                <p class="mb-0">Phone No: 7046337596</p>
+                                <p>www.website.com</p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <h5><strong>INVOICE/BILL</strong></h5>
+                                <p class="mb-0"><strong>No: </strong><span id="billnoview"></span></p>
+                                <p class="mb-0"><strong>Date: </strong><span id="billdateview"></span></p>
+                            </div>
+                        </div>
+                        <p><strong>Mr/s: </strong><span id="customerview"></span></p>
+                        <table class="table table-bordered text-center align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>SL.No:</th>
+                                    <th>Description</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="srnoview"></td>
+                                    <td id="productview"></td>
+                                    <td id="qtyview"></td>
+                                    <td id="rateview"></td>
+                                    <td id="amountview"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <table class="table borderless">
+                                    <tr>
+                                        <td class="text-end"><strong>Total:</strong></td>
+                                        <td id="totalview">__________</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end"><strong>Tax........%:</strong></td>
+                                        <td id="taxview">__________</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-end"><strong>Grand Total:</strong></td>
+                                        <td id="grandtotalview">__________</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <p><strong>Rupees in Word:</strong> __________________________________________________________
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <p><strong>Terms and Conditions</strong></p>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <p><strong>Signature</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Custon Link -->
+    <script src="./script.js"></script>
+</body>
+</html>

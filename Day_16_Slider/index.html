@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fade 0.8s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: scale(1.01);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 5;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        button:nth-of-type(1) {
+            left: 20px;
+        }
+
+        button:nth-of-type(2) {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-inner {
+                height: 300px;
+            }
+
+            button {
+                padding: 8px 14px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="carousel">
+                    <div id="carousel-inner" class="carousel-inner d-flex">
+                        <div class="slide active">
+                            <img src="./assest/3.jpg" alt="Nature 1">
+                        </div>
+                        <div class="slide">
+                            <img src="./assest/8.avif" alt="Nature 2">
+                        </div>
+                        <div class="slide">
+                            <img src="./assest/1.jpg" alt="Nature 3">
+                        </div>
+                        <div class="slide">
+                            <img src="./assest/4.webp" alt="Nature 4">
+                        </div>
+                        <div class="slide">
+                            <img src="./assest/6.jpg" alt="Nature 5">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button onclick="prevSlide()" class="btn">Prev</button>
+                        <button onclick="nextSlide()" class="btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

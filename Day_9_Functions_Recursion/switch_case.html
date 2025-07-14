@@ -1,0 +1,52 @@
+<script>
+    let a = parseInt(prompt("Enter value for a: "));
+    let b = parseInt(prompt("Enter value for b: "));
+
+    function add(a, b){
+        return a + b;
+    }
+
+    function sub(a, b){
+        return a - b;
+    }
+
+    function mul(a, b){
+        return a * b;
+    }
+
+    function div(a, b){
+        if (b === 0) {
+            return "Division by zero is not allowed.";
+        }
+        return a / b;
+    }
+
+
+    let choice = parseFloat(prompt("Enter your choice: 1 for add, 2 for sub, 3 for mul, 4 for div"));
+
+    switch(choice){
+        case 1: 
+            document.write(`Addition: ${add(a,b)}`);
+            alert(`Addition: ${add(a,b)}`);
+            break;
+
+        case 2: 
+            document.write(`Subtraction: ${sub(a,b)}`);
+            alert(`Subtraction: ${sub(a,b)}`);
+            break;
+
+        case 3: 
+            document.write(`Multiplication: ${mul(a,b)}`);
+            alert(`Multiplication: ${mul(a,b)}`);
+            break;
+
+        case 4: 
+            document.write(`Division: ${div(a,b)}`);
+            alert(`Division: ${div(a,b)}`);
+            break;
+
+        default:
+            alert("Invalid choice. Please enter a number between 1 and 4."); 
+            break;
+    }
+</script>

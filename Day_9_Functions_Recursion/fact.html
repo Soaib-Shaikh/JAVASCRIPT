@@ -1,0 +1,11 @@
+<script>
+    let num = parseInt(prompt("Enter num: "));
+
+    let fact = (num) => {
+        if(num <= 1) return 1;
+        return num * fact(num -1);
+    }
+
+    alert (`factorial is ${fact(num)}`);
+    document.write(`factorial is ${fact(num)}`);
+</script>

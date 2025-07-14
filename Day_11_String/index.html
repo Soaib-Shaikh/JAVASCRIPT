@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Methods Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans mx-auto">
+  <div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold mb-4 text-center">JavaScript String Methods</h1>
+    
+    <input id="inputString" type="text" placeholder="Enter your string here" class="w-full p-3 mb-5 border border-gray-300 rounded-md" oninput="updateResults()">
+
+    <div id="results" class="grid gap-4">
+      <!-- Results will be populated here -->
+    </div>
+  </div>
+
+  <script>
+    const resultBox = document.getElementById('results');
+
+    function updateResults() {
+      const str = document.getElementById('inputString').value;
+      const sampleStr = "Hello, world!";
+      const index = 7;
+      const pattern = /o/g;
+      const padStr = "*";
+
+      const methods = [
+        { name: "length", value: str.length },
+        { name: "charAt(2)", value: str.charAt(2) },
+        { name: "charCodeAt(2)", value: str.charCodeAt(2) },
+        { name: "concat(' - ', 'Appended')", value: str.concat(" - ", "Appended") },
+        { name: "indexOf('o')", value: str.indexOf('o') },
+        { name: "lastIndexOf('o')", value: str.lastIndexOf('o') },
+        { name: "includes('test')", value: str.includes("test") },
+        { name: "startsWith('Hello')", value: str.startsWith("Hello") },
+        { name: "endsWith('!')", value: str.endsWith("!") },
+        { name: "slice(2, 6)", value: str.slice(2, 6) },
+        { name: "substring(2, 6)", value: str.substring(2, 6) },
+        { name: "substr(2, 4)", value: str.substr(2, 4) },
+        { name: "split(' ')", value: JSON.stringify(str.split(" ")) },
+        { name: "replace('o', 'O')", value: str.replace('o', 'O') },
+        { name: "replaceAll('o', 'O')", value: str.replaceAll('o', 'O') },
+        { name: "toLowerCase()", value: str.toLowerCase() },
+        { name: "toUpperCase()", value: str.toUpperCase() },
+        { name: "trim()", value: str.trim() },
+        { name: "trimStart()", value: str.trimStart() },
+        { name: "trimEnd()", value: str.trimEnd() },
+        { name: "match(/o/g)", value: JSON.stringify(str.match(pattern)) },
+        { name: "search(/o/)", value: str.search(/o/) },
+        { name: "repeat(2)", value: str.repeat(2) },
+        { name: "padStart(20, '*')", value: str.padStart(20, padStr) },
+        { name: "padEnd(20, '*')", value: str.padEnd(20, padStr) },
+        { name: "toString()", value: str.toString() },
+        { name: "valueOf()", value: str.valueOf() }
+      ];
+
+      resultBox.innerHTML = methods.map(m =>
+        `<div class="p-3 border rounded bg-gray-50">
+          <strong>${m.name}:</strong> <span class="text-blue-700">${m.value}</span>
+        </div>`
+      ).join('');
+    }
+  </script>
+</body>
+</html>

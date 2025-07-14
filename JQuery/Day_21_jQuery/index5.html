@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>My Love♥♥💗</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card-container {
+            background: linear-gradient(145deg, #ff4e78, #ff6b9b);
+            color: #fff0f5;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 30px rgba(255, 105, 135, 0.3);
+            max-width: 750px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .card-container:hover {
+            transform: scale(1.01);
+        }
+
+        .btn-toggle {
+            padding: 10px 24px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            background: linear-gradient(to right, #ff6a88, #ff99ac);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 105, 135, 0.2);
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .btn-toggle:hover {
+            background: linear-gradient(to right, #ff4e78, #ff8ca3);
+            transform: translateY(-2px);
+        }
+
+        .info-text {
+            display: none;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-left: 6px solid #ffccd5;
+            border-radius: 12px;
+            font-size: 1rem;
+            line-height: 1.7;
+            backdrop-filter: blur(8px);
+        }
+
+        strong {
+            color: #ffe600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container text-center">
+        <button class="btn btn-toggle">Click Me</button>
+        <div id="text" class="info-text text-start mt-3">
+            <p>
+                My love, you are the reason for my happiness, you are my strength 💪. With you, I feel like a special
+                person ❤. Your presence in my life makes everything beautiful 🌈. Every moment with you feels special,
+                and every memory with you is a special memory 💫. Your hand in mine gives me peace, and time spent with
+                you is the best gift 🎁. Your love makes me feel safe, like I'm in heaven ❤. Talking to you gives me joy
+                and makes me feel special 💬. Your presence makes my life beautiful, and every moment with you is
+                memorable 📚. You are my happiness, my strength 💕. Your love is my safe haven 🏠. My love, you are my
+                forever peace, and you will always be a special person for me 🌟. With you, everything is always special
+                💫. My love, I will love you always, now and forever ❤. I love you more than words can express, more
+                than my heart can beat, more than my soul can feel 🤗. I miss you so much, every moment without you
+                feels like an eternity, and my heart longs to be with you again 🤗💋. Sending you all my love, hugs, and
+                kisses 🤗💕. I love you so much My love♥♥💗, I miss you so much My life My everything.
+                <br><br>
+                ❤️ You are the reason I wake up with a smile every day. <br>
+                ❤️ You are the beat of my heart and the light of my soul. <br>
+                ❤️ Even in silence, your love speaks to me. <br>
+                ❤️ In your arms, I’ve found my forever. <br>
+                ❤️ Loving you is the most beautiful feeling I've ever known.<br>
+                ❤️ Thank you for being you. Thank you for filling my life with love and joy. Thank you for choosing me,
+                supporting me, and trusting me — My Love, My Sweetheart, My Everything, Meri Jaan ❤️❤️❤️❤️❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('button').click(() => {
+                $('#text').slideToggle(500);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

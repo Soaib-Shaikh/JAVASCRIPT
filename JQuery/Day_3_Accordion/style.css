@@ -1,0 +1,87 @@
+/* Accordion Container Styling - Glassmorphism Style */
+.custom-accordion .accordion-body {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Header */
+.accordion-header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(to right, #5d0ecc, #1c5fff);
+}
+
+/* Icon Style */
+.icon {
+    transition: transform 0.4s ease;
+    font-size: 1.5rem;
+    transform: rotate(0deg);
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.accordion-collapse {
+    display: none;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-collapse.active {
+    display: block;
+}
+
+/* Typography Enhancements */
+.accordion-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Page Background */
+body {
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    height: 100vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .accordion-header {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+
+    .accordion-collapse {
+        padding: 16px 20px;
+    }
+
+    .icon {
+        font-size: 1.3rem;
+    }
+}

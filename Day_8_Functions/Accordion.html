@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to left, #f0f4c3, #b2dfdb);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: #004d40;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .accordion-card {
+            background-color: #fff;
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, #00796b, #004d40);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #009688, #00695c);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0 1.5rem;
+            background-color: #f2f4f8;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: max-height 0.8s ease, opacity 0.8s ease, padding 0.8s ease;
+        }
+
+        .accordion-body.active {
+            max-height: 500px;
+            opacity: 1;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .arrow {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.rotate {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 576px) {
+            .accordion-header {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .accordion-body {
+                font-size: 0.95rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="heading">Accordion</h1>
+
+        <div class="accordion-card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Heading 1
+                <span class="arrow">▼</span>
+            </div>
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit obcaecati dolore dicta officia,
+                    illo architecto in ex reprehenderit adipisci voluptates cumque laborum cum odio reiciendis libero
+                    consequuntur iure ut.</p>
+            </div>
+        </div>
+
+        <div class="accordion-card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Heading 2
+                <span class="arrow">▼</span>
+            </div>
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit obcaecati dolore dicta officia,
+                    illo architecto in ex reprehenderit adipisci voluptates cumque laborum cum odio reiciendis libero
+                    consequuntur iure ut.</p>
+            </div>
+        </div>
+
+        <div class="accordion-card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Heading 4
+                <span class="arrow">▼</span>
+            </div>
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit obcaecati dolore dicta officia,
+                    illo architecto in ex reprehenderit adipisci voluptates cumque laborum cum odio reiciendis libero
+                    consequuntur iure ut.</p>
+            </div>
+        </div>
+
+        <div class="accordion-card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Heading 4
+                <span class="arrow">▼</span>
+            </div>
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit obcaecati dolore dicta officia,
+                    illo architecto in ex reprehenderit adipisci voluptates cumque laborum cum odio reiciendis libero
+                    consequuntur iure ut.</p>
+            </div>
+        </div>
+
+        <div class="accordion-card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Heading 5
+                <span class="arrow">▼</span>
+            </div>
+            <div class="accordion-body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit obcaecati dolore dicta officia,
+                    illo architecto in ex reprehenderit adipisci voluptates cumque laborum cum odio reiciendis libero
+                    consequuntur iure ut.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            let body = header.nextElementSibling;
+            let arrow = header.querySelector('.arrow');
+
+            body.classList.toggle('active');
+            arrow.classList.toggle('rotate');
+        }
+    </script>
+
+</body>
+
+</html>
